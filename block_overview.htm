@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="generator"
+    content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+    <title>TurboChain区块信息</title>
+    <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="Block on the TurboChain." />
+    <meta name="author" content="etherscan.io" />
+    <meta name="keywords" content="TurboChain, explorer, pwc, search, PowerCoin, crypto, currency" />
+    <meta name="format-detection" content="telephone=no" />
+	
+	 <script type="text/javascript" src="./js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+    <script src="./js/M2jbC5w-2kzKWSY9kfVDccG4Ox8.js"></script>
+   
+	<script type="text/javascript" src="./js/bootstrap.min.js"></script> 
+	 <script type="text/javascript" src="./js/include/include.js"></script>
+    <script type="text/javascript" src="./js/my.js" ></script>
+   
+  
+  
+     <link rel="stylesheet" type="text/css" href="./css/css-family=Open+Sans-400,300,600&subset=cyrillic,latin.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style-mod.css" />
+    <link rel="stylesheet" href="./css/custom-head-foot-scroll-blue.css" />
+    <link rel="stylesheet" href="./css/line-icons.css" />
+    <link rel="stylesheet" href="./css/font-awesome.min.css" />
+  </head>
+  <body>
+  <div class="wrapper">
+    <!--<include src='./common/header2.htm'></include>-->
+    <div id="myheader"> </div>
+    <div class="container left hidden-lg hidden-md" id="divmobilesearch"
+    style="margin-top: 5px; margin-bottom: -18px; padding-right: 20px; padding-left: 20px;">
+      <form action="#" method="get">
+        <input id="txtSearchInputMobile" type="text" placeholder="Search for Account, Tx Hash or Data" class="form-control"
+        style="text-align: center;" name="q" maxlength="100" title="Address, Contract, Txn Hash or Data" />
+      </form>
+      <br />
+      <br />
+    </div>
+    <div class="breadcrumbs">
+      <div class="container">
+        <h1 class="pull-left">区块 
+        <span class="lead-modify" style="color: #999999" id='height2'></span>
+        <br /></h1>
+        <ul class="pull-right breadcrumb">
+          <li>
+            <a href="index.htm" >主页</a>
+          </li>
+          <li>
+            <a href="blocks.htm">区块</a>
+          </li>
+          <li class="active">区块信息</li>
+        </ul>
+      </div>
+    </div>
+    <div class="profile container" id="Top">
+      <span id="ContentPlaceHolder1_lblAdResult"></span>
+      <br />
+      <div class="tab-v1">
+        <ul class="nav nav-tabs" id='nav_tabs' style="border-bottom:solid 0px #183257">
+          <li class="active">
+            <a href="#overview" data-toggle="tab">概述</a>
+          </li>
+          <li id="ContentPlaceHolder1_li_disqus">
+            <a href="#comments" data-toggle="tab" onclick="javascript:loaddisqus();">评论</a>
+          </li>
+        </ul>
+        <div class="tab-content" style="padding: 1px 0;">
+          <div class="tab-pane fade in active " id="overview">
+            <div class="panel panel-info table-responsive colorde backstyle">
+              <div class="panel-heading margin-bottom-15" style="background-color: #06162c;color:#fff">
+                <h3 class="panel-title">区块信息</h3>
+              </div>
+              <table id="ContentPlaceHolder1_maintable" class="table nav-justified" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="190">Height:</td>
+                  <td>
+                  <a id="ContentPlaceHolder1_HyperLinkPrev" title="Previous Block" class="btn 
+				  btn-primary btn-xs" role="button"
+                  href="javascript:void(0)"> Prev</a> 
+                  <b id = 'height1'>5335814</b> 
+                  <a id="ContentPlaceHolder1_HyperLinkNext" title="Next Block" class="btn btn-primary 
+				  btn-xs" role="button"
+                  href="javascript:void(0)" >Next </a></td>
+                </tr>
+                <tr>
+                  <td width="190">时间:</td>
+                  <td id='timeStamp'></td>
+                </tr>
+                <tr>
+                  <td width="190">交易:</td>
+                  <td id='toTxstd'>
+                  <a href="#" id='toTxs'
+                  title='Click to View Transactions'>
+				  <b id='transactionNum'></b> 个交易</a>在这个区块</td>
+                </tr>
+                <tr>
+                  <td width="190">哈希:</td>
+                  <td id='hash'></td>
+                </tr>
+                <tr>
+                  <td width="190">父哈希:</td>
+                  <td id='parentHash'>
+                    
+                  </td>
+                </tr>
+                <tr>
+                  <td width="190">Sha3Uncles:</td>
+                  <td id='sha3Uncles'></td>
+                </tr>
+                <tr>
+                  <td width="190">Mined By:</td>
+                  <td>
+                  <a href="#"
+				  id='miner'
+				  ></a>
+                  <!--(<b>Nanopool</b>) in 18 secs-->
+				  
+				  </td>
+                </tr>
+                <tr>
+                  <td width="190">Difficulty:</td>
+                  <td id='diffculty'>3,215,908,237,356,236</td>
+                </tr>
+                <tr>
+                  <td width="190">Total Difficulty:</td>
+                  <td id='totalDiffculty'>3,307,561,687,922,830,837,610</td>
+                </tr>
+                <tr>
+                  <td width="190">Size:</td>
+                  <td id='size'>27743 bytes</td>
+                </tr>
+                <tr>
+                  <td width="190">Gas Used:</td>
+                  <td id='gasUsed'>7,943,971</td>
+                </tr>
+                <tr>
+                  <td width="190">瓦斯限制:</td>
+                  <td id='gasLimit'>7,982,750</td>
+                </tr>
+                <tr>
+                  <td width="190">Nonce:</td>
+                  <td id='nonce'>0x888d8fa6d013d66cda</td>
+                </tr>
+                <tr>
+                  <td width="190">区块奖励:</td>
+                  <td id='blockReward'>3</td>
+                </tr>
+                <tr>
+                  <td width="190">额外信息:</td>
+                  <td>nanopool.org (Hex:<b id='extraData'>0x6e616e6f706f6f6c2e6f7267</b>)</td>
+                </tr>
+              </table>
+              <br />
+            </div>
+          </div>
+          <div class="tab-pane fade in" id="comments">
+            <div class="panel panel-info">
+              <div class="panel-body backstyle colorde">
+                <div>Make sure to use the "downvote" button for any spammy posts, and the "upvote" for interesting conversations.
+                <br />
+                <div id="disqus_thread"></div>
+
+                <noscript>Please enable JavaScript to view the 
+                <a href="#" rel="nofollow">comments powered by Disqus.</a></noscript></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+    </div>
+	<script type='text/javascript'>
+	  var hash = window.location.hash.substring(1);
+	    
+        $(document).ready(function () {
+			//$("[rel='tooltip']").tooltip({ html: true });
+            if (hash != '') {
+                activaTab(hash);            
+            };
+        });
+        function activaTab(tab) {
+            if (tab.indexOf('comment') >= 0) {
+                tab = 'comments';
+                loaddisqus();           
+            };
+            $('.nav-tabs a[href="#' + tab + '"]').tab('show');
+			
+        };
+        function updatehash(strhash) {
+            if (strhash == '') {
+                history.replaceState("", document.title, window.location.pathname);
+            } else {
+                var baseUrl = window.location.href.split('#')[0];
+                history.replaceState("", document.title, baseUrl + '#' + strhash);
+            }
+        }
+
+        var disqusloaded = false;
+        function loaddisqus() {
+            if (disqusloaded == false) {
+                var dsq = document.createElement('script'); 
+				dsq.type = 'text/javascript'; 
+				dsq.async = true;
+                //dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).
+				appendChild(dsq);
+                disqusloaded = true;
+            }
+            updatehash('comments');
+        }
+	</script>
+     <script type="text/javascript" src='./js/pages/block_overview.js'></script>
+    <div id="push"></div>
+  </div>
+<include src='./common/footer.htm'></include>
+

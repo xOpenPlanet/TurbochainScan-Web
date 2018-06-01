@@ -1,0 +1,229 @@
+ <div class="header">
+        <div class="container">
+          <a class="logo" href="index.htm" target="_parent" title="Home Page">
+            <img id="logo-header" src="./images/TurboChain@51.png"
+               alt="Logo"
+            style="margin-top: 16px; margin-bottom: 14px; margin-left: -6px;" />
+          </a>
+          <div class="topbar hidden-xs hidden-sm">
+
+              <div style="margin-left: 2em" class="loginbar pull-right">
+                <div style="display: inline;">
+				<select id='languageSelect'  style="width:70px;height: 31px;">
+					  <option value='1'>中文</option>
+					  <option value='2'>English</option>
+			   </select>
+                <input id="searchInput" type="text" class="form-control-custom"
+                placeholder="请输入地址/交易哈希/区块编号" name="q" maxlength="80"
+                style="width: 330px; height: 31px;" /> 
+                <span class="" style="display: inline">
+                  <button class="btn-u" id="tosearch"
+                  style="padding: 3px 6px 3px 6px; height: 32px; width: 41px; margin-left: -5px; margin-top: 3px;">
+                    <span  class="" style="display: inline">输入</span>
+                  </button>
+	
+                </span>
+				
+				
+                </div>
+				
+              </div>
+              
+          </div>
+		  
+				
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="sr-only">Toggle navigation</span> </button>
+		  
+		   
+        </div>
+        <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
+          <div class="container">
+            <ul class="nav navbar-nav">
+              <li id="LI_default" class="active">
+                <a href="index.htm" style="color:#deb46c">首页</a>
+              </li>
+              <li id="LI_blockchain" class="dropdown">
+                <a href="#" class="" data-toggle="dropdown"  style="color:#deb46c">区块链</a>
+                <ul class="dropdown-menu">
+                  <li id="LI12">
+                    <a href="txs.htm" ><i class="fa fa-list-alt"></i>查看交易</a>
+                  </li>
+                  <li id="LI16">
+                    <a href="txsPending.htm" >
+					<i class="fa fa-tasks "></i>
+					查看待完成的交易</a>
+                  </li>
+                  <li id="LI14">
+                    <a href="txsInternal.htm" ><i class="fa fa-puzzle-piece"></i>查看内部合约交易</a>
+                  </li>
+				  <li class="divider"></li>
+                  <li id="LI_blocks2" class="dropdown-submenu">
+                    <a href="blocks.htm" ><i class="fa fa-cubes"></i>查看区块</a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a href="blocks_forked.htm" 
+                        title="Invalid blocks from block chain reorganizations">分叉区块 (Reorgs)</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li id="LI8">
+                    <a href="uncles.htm" ><i class="fa fa-cube"></i>查看叔区块</a>
+                  </li>
+				  <li class="divider"></li>
+                  <li id="LI_accountall">
+                    <a href="accounts.htm"  title="Normal  Contract Accounts">
+					<i class="fa fa-building"></i>所有账户</a>
+                  </li>
+                  <li id="LI_contract_verified">
+                    <a href="contractsVerified.htm" 
+                    title="Contracts with Verified Source Code"><i class="fa fa-check-circle-o"></i>验证合约</a>
+                  </li>
+                </ul>
+              </li>
+              <li id="LI_tokens" class="dropdown">
+                <a href="#" class="" data-toggle="dropdown" style="color:#deb46c">代币</a>
+                <ul class="dropdown-menu">
+                  <li id="LI21">
+                    <a href="tokens.htm"  title="View Tokens"><i class="fa fa-list"></i>View Tokens</a>
+                  </li>
+				  <li class="divider"></li>
+                  <li id="LI1">
+                    <a href="tokentxns.htm" ><i class="fa fa-list"></i>View Token Transfers</a>
+                  </li>
+                </ul>
+              </li>
+              <li id="LI_charts2">
+                <a href="#" style="color:#deb46c">图表</a>
+              </li>
+              <li id="LI_services2" class="dropdown">
+                <a href="#" class="" data-toggle="dropdown" style="color:#deb46c">杂项</a>
+                <ul class="dropdown-menu">
+                  <li id="LI5">
+                    <a href="#" >
+					<i class="fa fa-gavel"></i>
+					挖矿计算器</a>
+                  </li>
+                  <li id="LI6">
+                    <a href="#" ><i class="fa fa-cogs"></i>APIs</a>
+                  </li>
+                  <li id="LI17">
+                    <a href="#" 
+                    title="Verify and Publish your contract source code"><i class="fa fa-code"></i> 验证合约</a>
+                  </li>
+                  <li id="LI24">
+                    <a href="#" title="ByteCode to Opcode Converter">
+					<i class="fa  fa-ellipsis-h"></i>
+					字节转换成操作码</a>
+                  </li>
+                  <li id="LI29">
+                    <a href="#" 
+                    title="List Of Verified Message Signatures"><i class="fa fa-code"></i>Verified Signatures</a>
+                  </li>
+                  <li id="LI10">
+                    <a href="#" ><i class="fa fa-pied-piper-alt"></i>
+					广播交易</a>
+                  </li>
+                  <li id="LI2">
+                    <a href="#" 
+                    title="Find other contracts that have the same/similiar contract codes">
+					<i class="fa fa-search-plus"></i>
+					相似合约</a>
+                  </li>
+				  <li class="divider"></li>
+                  <li id="LI25">
+                    <a href="#"  title="Swarm Search">
+					<i class="fa fa-search-plus"></i>
+					Swarm Search</a>
+                  </li>
+                  <li id="LI30">
+                    <a href="#"  title="Swarm Upload">
+					<i class="fa fa-cloud-upload"></i>
+					Swarm Upload</a>
+                  </li>
+				  <li class="divider"></li>
+                  <li id="LI4">
+                    <a href="#"  title="Ethereum Dex Tracker">
+					<i class="fa fa-bars"></i>
+					DEX Tracker</a>
+                  </li>
+                  <li id="LI19">
+                    <a href="#"  title="Ethereum Gas Tracker">
+					<i class="fa fa-bars"></i>
+					GAS Tracker</a>
+                  </li>
+				  <li class="divider"></li>
+                  <li id="LI22">
+                    <a href="#"  title="Ethereum Name Service Events">
+					<i class="fa fa-bars"></i>
+					ENS Events</a>
+                  </li>
+                  <li id="LI26">
+                    <a href="#"  title="Ethereum Name Service Lookup">
+					<i class="fa fa-search-plus"></i>
+					ENS
+                    Lookup</a>
+                  </li>
+                </ul>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+ <script type="text/javascript" >
+    
+    $("#languageSelect").change(function(){
+	                if($("#languageSelect").val() == 2){ 
+					
+					 //str=window.location.pathname.replace('pages_zh','pages');
+					 //str=window.location.pathname.replace('/pages_zh','');
+					  //str= "/pages"+window.location.pathname;
+					  str= "/pages"+window.location.pathname;
+					  window.location.href = str+window.location.search;
+					}
+	})
+ 
+     $("#searchInput").keydown(function(event){
+         if(event.keyCode ==13){
+             searchResult()
+         }
+     })
+     $("#tosearch").click(searchResult)
+     function searchResult() {
+         if($("#searchInput").val() === null || $("#searchInput").val() === ""){
+             window.location.href = "./search.htm?key=null"
+
+         } else {
+             $.ajax({
+                 type: "POST",//提交请求的方式
+                 //url:server_ip+"/search",
+                 url: server_ip + "/search",
+                 dataType: "json",
+                 data: {
+                     key: $("#searchInput").val()
+                 },//把内容序列化
+                 error: function (request) { //请求出错
+                     console.log(request);
+                     alert("请求错误,请稍后重试");
+                 },
+                 success: function (data) {
+
+                     if (data.message === "block") {
+                         window.location.href = "./block_overview.htm?number=" + data.data.result.height
+
+                     } else if (data.message === "tx") {
+                         window.location.href = "./txsDetail.htm?hash=" + data.data.result.txHash
+                     } else if (data.message === "address") {
+                         console.log(data)
+                         window.location.href = "./address.htm?address=" + $("#searchInput").val()
+                     } else {
+                         window.location.href = "./search.htm?key=" + $("#searchInput").val()
+                     }
+
+                 }
+             })
+         }
+     }
+
+ </script>

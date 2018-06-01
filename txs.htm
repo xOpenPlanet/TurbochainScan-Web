@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="generator"
+    content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+    <title>TurboChain交易信息</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="Search diagnose transactions status of pwc on the TurboChain." />
+    <meta name="author" content="etherscan.io" />
+    <meta name="keywords" content="TurboChain, explorer, pwc, search, crypto, currency" />
+    <meta name="format-detection" content="telephone=no" />
+    <script src="./js/M2jbC5w-2kzKWSY9kfVDccG4Ox8.js"></script>
+    <script type="text/javascript" src="./js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="./js/bootstrap.min.js"></script> 
+	
+	  <script type="text/javascript" src="./js/my.js" ></script>
+	 
+	  <script type="text/javascript" src="./js/include/include.js"></script>
+  </head>
+    <style type="text/css">
+    div.tooltip-inner {
+        max-width: 430px;
+        background-color: #505050;
+        font-size: 11px;
+    }
+    </style>
+   <link rel="stylesheet" type="text/css" href="./css/css-family=Open+Sans-400,300,600&subset=cyrillic,latin.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./css/style-mod.css"  />
+    <link rel="stylesheet" href="./css/custom-head-foot-scroll-blue.css" />
+    <link rel="stylesheet" href="./css/line-icons.css"  />
+    <link rel="stylesheet" href="./css/font-awesome.min.css" />
+	
+	
+  <body>
+
+  <div class="wrapper" style="backage-">
+      <!--<include src='./common/header2.htm'></include>-->
+    <div id="myheader"> </div>
+
+    <div class="breadcrumbs">
+      <div class="container">
+        <h1 class="pull-left">交易
+        <br /></h1>
+        <ul class="pull-right breadcrumb">
+          <li>
+            <a href="index.htm" >首页</a>
+          </li>
+          <li class="active">交易</li>
+        </ul>
+      </div>
+    </div>
+    <div class="profile container" style="margin-top: 5px">
+      <span id="ContentPlaceHolder1_lblAdResult"></span>
+	  <!--
+      <div style='margin-top:20px; margin-bottom:12px'>
+        <span id="ContentPlaceHolder1_lblAdResult">Sponsored Link: 
+        <img src="./images/saifu_20.png"  /> 
+        <b>Saifu</b> - Running an ICO? Need help exchanging your crypto to fiat?
+        <a href="#" rel='nofollow' title='Links to an External Advertiser site' target='_blank'>
+          <b>
+            <i>Saifu is here to help!</i>
+          </b>
+        </a></span>
+      </div>
+	  -->
+      <br />
+      <div class="row">
+        <div class="col-md-6 hidden-xs">
+        <span>
+          <i id="spinwheel" class="fa fa-spin fa-spinner fa-2x fa-pulse" style="display: none; margin-top: 4px"></i>
+        </span> 
+        <!--<span>More than  191438882 transactions found (showing the last 500k records)</span>-->
+		
+		</div>
+         
+	   <div class="col-md-6">
+          <p align="right">
+          <a class="btn btn-primary btn-xs pageFrist"  href="javascript:;">First</a> 
+          <a class="btn btn-primary btn-xs pagePrev"  href="javascript:;">Prev</a> 
+          <span style="padding: 2px 4px 4px 3px; border: 1px solid #D4D4D4; line-height: 30px; background-color: #EAEAEA; margin-top: 2px; height: 2px;">
+          Page 
+          <b class="currentPage" id="currentPage">1</b> of 
+          <b class="pageCount" id="pageCount">1</b></span> 
+          <a class="btn btn-default btn-xs  pageNext" href="javascript:;" >Next</a> 
+          <a class="btn btn-default btn-xs  pageLast" href="javascript:;">Last</a></p>
+        </div>
+     
+	 
+	   </div>
+      <div id="ContentPlaceHolder1_mainrow" class="row">
+        <div>
+          <div style="margin-left: 10px; margin-right: 10px">
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <!--<tr style="border-color: #E1E1E1; border-width: 1px; background-color: #F9F9F9; border-top-style: solid;">-->
+                   <tr class="trstyle">
+                    <th>交易哈希</th>
+                    <th class="hidden-sm">区块</th>
+                    <th>块龄</th>
+                    <th>发送</th>
+                    <th></th>
+                    <th>接收</th>
+                    <th>Value</th>
+                    <th>
+                      <span rel='tooltip' data-placement='bottom'>
+                        <font color='silver' size="1">[TxFee]</font>
+                      </span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody id='tableList'>
+                
+				  
+				 
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+	 
+      <div class="col-md-12">
+          <p align="right">
+          <a class="btn btn-primary btn-xs pageFrist"  href="javascript:;">First</a> 
+          <a class="btn btn-primary btn-xs pagePrev"  href="javascript:;">Prev</a> 
+          <span style="padding: 2px 4px 4px 3px; border: 1px solid #D4D4D4; line-height: 30px; background-color: #EAEAEA; margin-top: 2px; height: 2px;">
+          Page 
+          <b class="currentPage">1</b> of 
+          <b class="pageCount">1</b></span> 
+          <a class="btn btn-default btn-xs  pageNext" href="javascript:;">Next</a> 
+          <a class="btn btn-default btn-xs  pageLast" href="javascript:;">Last</a></p>
+		
+        </div>
+		
+      </div>
+      <br />
+      <br />
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $("[rel='tooltip']").tooltip({ html: true });
+			
+        });
+    
+</script>
+ <script type="text/javascript" src='./js/pages/txs.js'></script>
+    <div id="push"></div>
+  </div>
+  <include src='./common/footer.htm'></include>

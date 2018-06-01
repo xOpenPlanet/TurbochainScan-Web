@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="generator"
+    content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+    <title>TurboChain账户</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description"
+    content="List of Internal Transactions as a result of contract execution on the TurboChain" />
+    <meta name="author" content="etherscan.io" />
+    <meta name="keywords" content="TurboChain, explorer, pwc, search, PowerCoin, crypto, currency" />
+    <meta name="format-detection" content="telephone=no" />
+    <script src="./js/M2jbC5w-2kzKWSY9kfVDccG4Ox8.js"></script>
+    <script type="text/javascript" src="./js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-ui-1.10.3.full.min.js"></script>
+	<script type="text/javascript" src='./js/include/include.js'></script>
+	<script type="text/javascript" src="./js/my.js" ></script>
+	
+	
+	
+    <link rel="stylesheet" type="text/css" href="./css/css-family=Open+Sans-400,300,600&subset=cyrillic,latin.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style-mod.css" />
+    <link rel="stylesheet" href="./css/custom-head-foot-scroll-blue.css" />
+    <link rel="stylesheet" href="./css/line-icons.css" />
+    <link rel="stylesheet" href="./css/font-awesome.min.css" />
+
+  </head>
+  <body>
+  <div class="wrapper">
+ <!--<include src='./common/header2.htm'></include>-->
+      <div id="myheader"> </div>
+    <div class="container left hidden-lg hidden-md" id="divmobilesearch"
+    style="margin-top: 5px; margin-bottom: -18px; padding-right: 20px; padding-left: 20px;">
+      <form action="#" method="get">
+        <input id="txtSearchInputMobile" type="text" placeholder="Search for Account, Tx Hash or Data" class="form-control"
+        style="text-align: center;" name="q" maxlength="100" title="Address, Contract, Txn Hash or Data" />
+      </form>
+      <br />
+      <br />
+    </div>
+    <div class="breadcrumbs">
+      <div class="container">
+        <h1 class="pull-left">所有帐户 
+        <span class="lead-modify" style="color: #999999"></span>
+        <br /></h1>
+        <ul class="pull-right breadcrumb">
+          <li>
+            <a href="index.htm" >主页</a>
+          </li>
+          <li class="active">账户</li>
+        </ul>
+      </div>
+    </div>
+    <div class="profile container" style="margin-top: 5px">
+      <br />
+      <div class="row">
+        <div class="col-md-6 hidden-xs">
+        <span>
+          <i id="spinwheel" class="fa fa-spin fa-spinner fa-2x fa-pulse" style="display: none; margin-top: 4px"></i>
+        </span> 
+		<!--
+        <span>A total of more than 
+        <a href="#" title='View Address Growth Chart'>1999999 accounts found</a> (98,462,783
+        <b>.</b>186 pwc)
+        <br />
+        <i>Displaying the last 10000 records only</i>
+        <br />
+        <br /></span>
+		-->
+		</div>
+      <div class="col-md-6">
+          <p align="right">
+          <a class="btn btn-primary btn-xs pageFrist"  href="javascript:;">First</a> 
+          <a class="btn btn-primary btn-xs pagePrev"  href="javascript:;">Prev</a> 
+          <span style="padding: 2px 4px 4px 3px; border: 1px solid #D4D4D4; line-height: 30px; background-color: #EAEAEA; margin-top: 2px; height: 2px;">
+          Page 
+          <b class="currentPage" id="currentPage">1</b> of 
+          <b class="pageCount" id="pageCount">1</b></span> 
+          <a class="btn btn-default btn-xs  pageNext" href="javascript:;" >Next</a> 
+          <a class="btn btn-default btn-xs  pageLast" href="javascript:;">Last</a></p>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <div style="margin-left: 10px; margin-right: 10px">
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                <tr class="trstyle">
+                    <th>排名</th>
+                    <th>地址</th>
+                    <th>余额</th>
+                    
+                    <th>交易额</th>
+                  </tr>
+                </thead>
+                <tbody id='tableData'>
+                 
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p align="right">
+          <a class="btn btn-primary btn-xs pageFrist"  href="javascript:;">First</a> 
+          <a class="btn btn-primary btn-xs pagePrev"  href="javascript:;">Prev</a> 
+          <span style="padding: 2px 4px 4px 3px; border: 1px solid #D4D4D4; line-height: 30px; background-color: #EAEAEA; margin-top: 2px; height: 2px;">
+          Page 
+          <b class="currentPage">1</b> of 
+          <b class="pageCount">1</b></span> 
+          <a class="btn btn-default btn-xs  pageNext" href="javascript:;">Next</a> 
+          <a class="btn btn-default btn-xs  pageLast" href="javascript:;">Last</a></p>
+		
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <script type="text/javascript">
+        $(function () {
+            $("[rel='tooltip']").tooltip({ html: true });
+        });
+    
+</script>
+<script  type="text/javascript" src="./js/pages/accounts.js"></script>
+    <div id="push"></div>
+  </div>
+ <include src='./common/footer.htm'>

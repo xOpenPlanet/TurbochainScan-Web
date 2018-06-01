@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="generator"
+    content="HTML Tidy for HTML5 (experimental) for Windows " />
+    <title>TurboChain账户,地址和合约</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="The TurboChain Explorer, API and Analytics Platform" />
+    <meta name="author" content="etherscan.io" />
+    <meta name="keywords" content="TurboChain, explorer, pwc, search, PowerCoin, crypto, currency" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="X-FRAME-OPTIONS" content="ALLOW-FROM" />
+    <script src="./js/M2jbC5w-2kzKWSY9kfVDccG4Ox8.js"></script>
+    <script type="text/javascript" src="./js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-ui-1.10.3.full.min.js"></script>
+    <link rel="stylesheet" href="./css/page_search_inner.css" />
+    <script type="text/javascript" src="./js/qrcode.min.js"></script>
+   <script type="text/javascript" src="./js/bootstrap.min.js"></script> 
+	<script type="text/javascript" src='./js/include/include.js'></script>
+	<script type="text/javascript" src='./js/my.js'></script>
+    <!--<link rel="shortcut icon" href="./images/favicon2.ico" />-->
+    <link rel="stylesheet" type="text/css" href="./css/css-family=Open+Sans-400,300,600&subset=cyrillic,latin.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style-mod.css" />
+    <link rel="stylesheet" href="./css/custom-head-foot-scroll-blue.css" />
+    <link rel="stylesheet" href="./css/line-icons.css" />
+    <link rel="stylesheet" href="./css/font-awesome.min.css" />
+  </head>
+  <body>
+  <div class="wrapper">
+    <!--<include src='./common/header2.htm'></include>-->
+    <div id="myheader"> </div>
+  <div class="container left hidden-lg hidden-md" id="divmobilesearch"
+  style="margin-top: 5px; margin-bottom: -18px; padding-right: 20px; padding-left: 20px;">
+    <form action="#" method="get">
+      <input id="txtSearchInputMobile" type="text" placeholder="Search for Account, Tx Hash or Data" 
+	  class="form-control"
+      style="text-align: center;" name="q" maxlength="100" title="Address, Contract, Txn Hash or Data" />
+    </form>
+    <br />
+    <br />
+  </div>
+  <style>
+        .table > tbody > tr > td, .table > tbody > tr > th,
+        .table > tfoot > tr > td, .table > tfoot > tr > th,
+        .table > thead > tr > td, .table > thead > tr > th {
+            padding-top: 10px;
+            padding-bottom: 9px;
+        }
+       
+        pre {
+          resize: both;
+          overflow: auto;  
+        }
+        nbp {
+            padding-bottom: 0px;
+        }        
+        #balancelist {
+           font-family: monospace;           
+           max-height: 364px;/* you can change as you need it */           
+           min-width: 325px;
+           max-width: 365px;
+           overflow-y: auto;
+           overflow-x:  hidden; 
+           margin-left: -90px;
+           background-color: #FBFCFC;           
+        }        
+        #balancelist li {
+           border-bottom: 1px solid #E5E7E9;             
+           padding-top: 2px;
+           padding-bottom: 2px;           
+           font-size:12px;               
+           white-space: normal; 
+        }    
+        .liA {
+            font-size:11px; color:#B3B6B7;
+        }
+        .liH {
+            display:none;
+        }            
+    
+</style>
+  <script>
+        function resizeIframe(obj, addwidth) {            
+            setTimeout(function () {
+            obj.style.height = 0;
+            obj.style.height = (/*obj.contentWindow.document.body.scrollHeight +*/ addwidth) + 'px';
+            
+            }, 300);             
+        }
+        var strURL = "//";
+        var litContractABIAddressCode = "";
+    
+</script>
+  <div class="breadcrumbs" style="margin-bottom: -5px">
+    <div class="container">
+      <div id="icon">
+        <h1 class="pull-left">地址 
+        <span class="lead-modify" style="color: #999999" id="address">
+          <span id='mainaddress' id='address'></span>
+        </span>
+        <br /></h1>
+      </div>
+      <ul class="pull-right breadcrumb">
+        <li>
+          <a href="home.htm">主页</a>
+        </li>
+        <li>
+          <a href="#">普通账户</a>
+        </li>
+        <li class="active">地址</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+    <span id="ContentPlaceHolder1_lblAdResult"></span>
+	<!--
+    <div style='margin-top:20px; margin-bottom:20px'>
+      <span id="ContentPlaceHolder1_lblAdResult">Sponsored Link: 
+      <img src="./images/doctailor_20.png" /> 
+      <b>DocTailor</b> - Legal Self Customisable Smart Contract Platform - Bridging the Gap Between 
+	  Business  Cryptocurrency
+      Holders - 
+      <a href="#" rel='nofollow' title='Links to an External Advertiser site' target='_blank'>
+        <b>Join Now!</b>
+      </a></span>
+    </div>
+	-->
+    <div id="ContentPlaceHolder1_divSummary" class="row margin-top-20">
+      <div class="col-md-6" style="margin-bottom: -3px">
+        <table class="table">
+          <thead>
+            <tr>
+              <th colspan="2">概述 
+              <span id="ContentPlaceHolder1_qrcodeimg" class="pull-right">
+                <a id="target" href="#" style="margin-top: -5px;" title="Click For QR Code">
+                  <img src="./images/qrcode2.png" style="margin-top: -3px" />
+                </a>
+              </span></th>
+            </tr>
+          </thead>
+          <tr>
+            <td>ETH Balance:</td>
+            <td id='balance'> </td>
+          </tr>
+          <tr>
+            <td>ETH USD Value:</td>
+            <td> 
+            <font size="1" style='position:relative;top:-1px'></font></td>
+          </tr>
+          <tr>
+            <td>No Of Transactions:</td>
+            <td>
+              <span title='Normal Transactions' rel='tooltip' data-placement='bottom' id="total1">0
+			  txns</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-6">
+        <table class="table">
+          <tr>
+            <td id="ContentPlaceHolder1_td_misc" style="border-top-style: none">
+              <b>Misc</b>
+            </td>
+            <td style="border-top-style: none">
+              <div id="ContentPlaceHolder1_moreoptionsdiv" class="btn-group" style="margin-top: -5px;">
+                <span class="pull-right">
+                  <button type="button" class="btn btn-xs btn-default">
+                  <span class="pull-right">More Options</span> 
+                  <button type="button" class="btn-u btn-u-xs btn-u-default dropdown-toggle" data-toggle
+				  ="dropdown"
+                  title="Click for options"> 
+				  <i class="fa fa-angle-down"></i>
+                  <span class="sr-only">Toggle Dropdown</span></button>
+                  <ul class="dropdown-menu" role="menu" style="font-size:12px">
+                    <li>
+                      <a href='#' rel='tooltip' data-placement='left' title='Must be Logged in to 
+					  access this feature'>
+                        <font color='silver'> <i class='fa fa-sticky-note-o'></i>View private Note</font>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#"><i class='fa fa-history'></i>Check previous EthBalance</a>
+                    </li>
+                  </ul></button>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Address Watch</td>
+            <td>
+              <a id="ContentPlaceHolder1_linkAddtoWatch" class="btn-u btn-brd btn-brd-hover 
+			  btn-u-orange btn-u-xs"
+              title="Add Address to Alert Watch List" href="#">Add To Watch List</a>
+            </td>
+          </tr>
+		  
+		  
+		  
+		   <tr id="ContentPlaceHolder1_tokenbalance">
+            <td>Token Balances</td>
+			</tr>
+		  <!--
+          <tr id="ContentPlaceHolder1_tokenbalance">
+            <td>Token Balances</td>
+            <td>
+              <div class="s-results">
+                <div class="">
+                  <ul class="list-inline up-ul badge-lists">
+                    <li class="btn-group">
+                      <button data-toggle="dropdown" id='balancelistbtn' class="btn btn-default 
+					  dropdown-toggle" type="button"
+                      
+					  style="padding-top:0px;padding-bottom:3px;padding-left:7px;width:220px;font-size:13
+					  px;"
+                      title="List of Tokens Owned by this Address">
+                      <span class="pull-left">View ($1,771,938.44) 
+                      <span class="sr-only">Toggle Dropdown</span></span> 
+                      <span class='badge badge-blue rounded-2x' title='94 Token 
+					  Contracts'>94</span></button>
+                      <ul id="balancelist" role="menu" class="dropdown-menu">
+                        <li style="padding-left:7px;padding-bottom:8px;">
+                          <input type="text" id="myInput2"
+                          style="width:98%;border: 1px solid 
+						  #ddd;height:30px;padding-left:25px;background-image: 
+						  url('/images/icons/search-black.png');background-position:6px 
+						  8px;background-repeat: no-repeat;"
+                          onkeyup="myFunction()" placeholder="Search for TokenName" />
+                        </li>
+                        <li>
+                          <a href="#" style='white-space:normal' title='Click for More Info..'>
+                          <b>0xBitcoin Token
+                          <i class='liH'>0xBitcoin Token 0xBTC</i></b>
+                          <br />1.000001 0xBTC</a>
+                        </li>
+                        <li>
+                          <a href="#" style='white-space:normal' title='Click for More Info..'>
+                          <b>AMIS
+                          <i class='liH'>AMIS AMIS</i>
+                          <span class='pull-right'>$1,174.93</span></b>
+                          <br />1 AMIS
+                          <span class='pull-right liA'>@1,174.9300</span></a>
+                        </li>
+                        <li>
+                          <a href="#" style='white-space:normal' title='Click for More Info..'>
+                          <b>ATMChain
+                          <i class='liH'>ATMChain ATM</i>
+                          <span class='pull-right'>$0.37</span></b>
+                          <br />99 ATM
+                          <span class='pull-right liA'>@0.0038</span></a>
+                        </li>
+                        <li>
+                          <a href="#" style='white-space:normal' title='Click for More Info..'>
+                          <b>BitCAD
+                          <i class='liH'>BitCAD BCD</i></b>
+                          <br />5.555 BCD</a>
+                        </li>
+                        <li>
+                          <a href="#" style='white-space:normal' title='Click for More Info..'>
+                          <b>BitClave
+                          <i class='liH'>BitClave CAT</i>
+                          <span class='pull-right'>$0.03</span></b>
+                          <br />1 CAT
+                          <span class='pull-right liA'>@0.0257</span></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li style="list-style: none; display: inline">
+                      <a href="#" title='View Expanded Token Holdings View'>
+                        <img src="./images/expand4.png" />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </td>
+          </tr>
+		  
+		  -->
+        </table>
+      </div>
+    </div>
+    <div id="ContentPlaceHolder1_maintab" class="tab-v1">
+      <ul class="nav nav-tabs" id='nav_tabs'>
+        <li class="active" id='click1'>
+          <a href="#transactions" title='Primary Transactions' data-toggle="tab"
+          >交易</a>
+        </li>
+        <li id="ContentPlaceHolder1_li_tokentransfers" >
+          <a href="#tokentxns" data-toggle="tab"
+          title='ERC20 Token Transfer Events'>Token Transfers</a>
+        </li>
+        <li id="ContentPlaceHolder1_li_disqus" >
+          <a href="#comments" title='User Comments' data-toggle="tab" >
+            <span class="disqus-comment-count"
+           >评论</span>
+          </a>
+        </li>
+      </ul>
+      <div class="tab-content " style="padding: 1px 0;">
+        <div class="tab-pane fade in active" id="transactions">
+          <div class="panel panel-info backstyle colorde">
+            <div class="panel-body table-responsive">显示最新的25个交易 
+            <a href="#" title='Click to View Full List' id='total2' class="toTxs">共0个交易</a> 
+            <a id="ContentPlaceHolder1_linkShowMoreTx" class="btn-u btn-brd btn-u-xs pull-right 
+			margin-bottom-10 toTxs"
+            title="View All Transactions" href="#">
+              <font color='white'>查看全部</font>
+            </a>
+            <br />
+            <br />
+            <table class="table" >
+              <tr style="border-bottom:solid 2px #0c1d37">
+                <th>交易哈希</th>
+                <th class="hidden-sm">区块</th>
+                <th>
+                  <span title="UTC time">块龄</span>
+                </th>
+                <th>发送</th>
+                <th></th>
+                <th>接收</th>
+                <th>Value</th>
+                <th>
+                  <span rel='tooltip' data-placement='bottom' title="(GasPrice * GasUsed By Txn) in 
+				  能量币">
+                    <font color='silver' size="1">[TxFee]</font>
+                  </span>
+                </th>
+              </tr>
+			   <tbody id="table">
+              
+			  </tbody>
+            </table></div>
+			<!--
+            <span class='pull-right' style='margin-top:20px' title='Export records in CSV format'>
+              <font size="1">[ Download 
+              <a href="#" target='_blank'>
+                <b>CSV Export</b>
+              </a> ]</font>
+            </span>
+			-->
+          </div>
+        </div>
+        <div class="tab-pane fade in" id="internaltx">
+          <div class="panel panel-info ">
+            <div class="panel-body table-responsive">Internal Transactions as a result of Contract 
+			Execution
+            <br />
+            <a id="ContentPlaceHolder1_linkShowMoreInternalTx" class="btn-u btn-brd btn-u-xs pull-right 
+			margin-bottom-10"
+            title="View All Transactions">
+              <font color='black'>View All</font>
+            </a>
+            <table class="table">
+              <tr>
+                <th>ParentTxHash</th>
+                <th>Block</th>
+                <th>
+                  <span>Age</span>
+                </th>
+                <th>From</th>
+                <th></th>
+                <th>To</th>
+                <th>Value</th>
+              </tr>
+            </table></div>
+          </div>
+        </div>
+        <div class="tab-pane fade in" id="tokentxns">
+          <div class="panel panel-info backstyle colorde">
+            <div class="panel-body table-responsive" style=
+			"overflow:auto;-webkit-overflow-scrolling:touch">
+              <iframe width="100%" id="tokenpageiframe" src="" frameborder="0" onload=
+			  'javascript:resizeIframe(this, 0);'></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="code">
+          <div class="panel panel-info ">
+            <div class="panel-body">
+            <div id="ContentPlaceHolder1_contractCodeDiv" class="row">
+              <div class="col-md-12" style="margin-bottom: 22px"></div>
+              <div class="col-md-6" style="margin-bottom: -18px">
+                <table class="table">
+                  <tr>
+                    <td>Contract Name:</td>
+                    <td>0 ETH</td>
+                  </tr>
+                  <tr>
+                    <td>Compiler Version:</td>
+                    <td>0</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="col-md-6" style="margin-bottom: -18px">
+                <table class="table">
+                  <tr>
+                    <td>Optimization Enabled:</td>
+                    <td>0 ETH</td>
+                  </tr>
+                  <tr>
+                    <td>Runs (Optimiser):</td>
+                    <td>-NA-</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <br />
+            <br />
+            <button id="ContentPlaceHolder1_btnconvert222" class="btn-u btn-u-brown"
+            style="padding: 0px 4px 0px 4px; text-align: right;" type="button"
+            onclick="javascript:convertstr(document.getElementById('mainaddress').innerHTML);">Switch 
+			To Opcodes View</button> 
+            <button id="ContentPlaceHolder1_btnFindSimiliarContracts" class="btn-u btn-u-default"
+            style="padding: 0px 4px 0px 4px; text-align: right;" type="button"
+            onclick="javascript:location.href = '/find-similiar-contracts?a=' + 
+			document.getElementById('mainaddress').innerHTML + '&amp;lvl=5';"
+            title="Find other contracts with similiar contract codes using a 'Fuzzy' Search algorithm">
+			Find Similiar
+            Contracts</button> 
+            <span class='visible-xs'>
+              <br />
+            </span>
+            <div id="dividcode"></div></div>
+          </div>
+        </div>
+        <div class="tab-pane fade in" id="readContract">
+          <div class="panel panel-info">
+            <div class="panel-body">
+              <div>
+                <div class="table-responsive">
+                  <div id="overlay">
+                    <br />
+                    <center>
+                      <i id="spinwheel" class="fa fa-spin fa-spinner fa-2x fa-pulse" margin-top:=""></i>
+                    </center>
+                    <br />
+                  </div>
+                  <iframe width="100%" id="readcontractiframe" src="" frameborder="0" scrolling="yes"
+                  onload='javascript:resizeIframe(this, 0);'></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade in" id="events">
+          <div class="panel panel-info">
+            <div class="panel-body table-responsive" style=
+			"overflow:auto;-webkit-overflow-scrolling:touch">
+              <iframe width="100%" id="eventsIframe" src="" frameborder="0" onload=
+			  'javascript:resizeIframe(this, 0);'></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade in" id="mine">
+          <div class="panel panel-info">
+            <div class="panel-body table-responsive">
+              <a id="ContentPlaceHolder1_linkShowAllBlocksMined" class="btn-u btn-brd btn-u-xs 
+			  pull-right margin-bottom-10">
+                <font color='black'>View All</font>
+              </a>
+              <table class="table">
+                <tr>
+                  <th>Block</th>
+                  <th>
+                    <span title="UTC time">Age</span>
+                  </th>
+                  <th>txn</th>
+                  <th>Difficulty</th>
+                  <th>GasUsed</th>
+                  <th>Reward</th>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade in" id="uncle" visible="false">
+          <div class="panel panel-info">
+            <div class="panel-body table-responsive">
+              <a id="ContentPlaceHolder1_linkShowAllUnclesMined" class="btn-u btn-brd btn-u-xs 
+			  pull-right margin-bottom-10">
+                <font color='black'>View All</font>
+              </a>
+              <table class="table">
+                <tr>
+                  <th>Block</th>
+                  <th>
+                    <span title="UTC time">Age</span>
+                  </th>
+                  <th>UncleNumber</th>
+                  <th>Difficulty</th>
+                  <th>GasUsed</th>
+                  <th>Reward</th>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade in" id="comments">
+          <div class="panel panel-info backstyle colorde">
+            <div class="panel-body">
+              <div>Make sure to use the "downvote" button for any spammy posts, and the "upvote" for 
+			  interesting conversations.
+              <br />
+              <div id="disqus_thread"></div>
+ 
+              <noscript>Please enable JavaScript to view the 
+              <a href="#" rel="nofollow">comments powered by Disqus.</a></noscript></div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+  </div>
+  <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden=
+  "true" id="myModal">
+    <div class="modal-dialog" style="width: 380px">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+          <center>
+            <h5 id="myLargeModalLabel" class="modal-title">
+              <br />
+            </h5>
+          </center>
+          <p id="qraddress"></p>
+        </div>
+        <div class="modal-body">
+          <div id="qrcode" align="center"></div>
+
+          <br />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="responsive" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" 
+  aria-hidden="true">
+    <div class="modal-dialog" style="width: 450px">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+          <center>
+            <h5 id="myLargeModalLabelnote" class="modal-title">
+              <br />
+              <font size="3">
+                <b>View / Update Address Private Note</b>
+              </font>
+            </h5>
+          </center>
+        </div>
+        <div class="modal-body">
+          <br />
+          <textarea rows="8" cols="50" spellcheck="false" style="width: 410px; padding:5px; 
+		  color:dimgrey" class="inputbox"
+          id="txtPrivateNoteArea" onkeyup="javascript:Count(this);" onchange="javascript:Count(this);"
+		  ></textarea>
+          <div style="margin-top: 6px; padding: 0 1px; font-size: 11px; line-height: 15px; color: #999; 
+		  margin-top:0px">
+            <span id="privatenotetip">Tip: A private note (up to 500 characters) can be attached to 
+			this address. Please do NOT
+            store any passwords or private keys here.</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+        <button data-dismiss="modal" class="btn-u btn-u-default" type="button" id="closenote">Close
+		</button> 
+        <button class="btn-u" type="button" id="savenote">Save changes</button></div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="./js/web3.min.js" ></script> 
+  <!--<script type="text/javascript" src="./js/addresspage4.js" ></script> -->
+<script type="text/javascript">
+
+</script>
+ <script type="text/javascript" src="./js/pages/address.js"></script>
+  <div id="push"></div></div>
+ <include src='./common/footer.htm'></include>

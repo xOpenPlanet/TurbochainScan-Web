@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="generator"
+    content="HTML Tidy for HTML5 (experimental) for Windows " />
+    <title>TurboChain交易 </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="TurboChain, explorer, pwc, search, PowerCoin, crypto, currency" />
+    <meta name="format-detection" content="telephone=no" />
+    <script src="./js/M2jbC5w-2kzKWSY9kfVDccG4Ox8.js"></script>
+    <script type="text/javascript" src="./js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src='./js/include/include.js'></script>
+	<script type="text/javascript" src="./js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="./js/my.js" ></script>
+	
+   
+    <style>
+        .wordwrap {
+            white-space: pre-wrap; /* CSS3 */
+            white-space: -moz-pre-wrap; /* Firefox */
+            white-space: -o-pre-wrap; /* Opera 7 */
+            word-wrap: break-word; /* IE */
+        }
+        .specialpre {
+            border-color: white;
+            background-color: #FFFFFF;
+            padding: 0px;
+            margin: 0px;
+        }      
+        .cbs {
+                margin-bottom: 14px;
+        }
+        .inputbox { font-size: 13px !important; padding: 4px;}
+    
+    </style>
+    <script>
+        function resizeIframe(obj) {
+            obj.style.height = 0;
+            obj.style.height = (obj.contentWindow.document.body.scrollHeight + 100) + 'px';
+    }
+    
+ </script>
+    <link rel="stylesheet" type="text/css" href="./css/css-family=Open+Sans-400,300,600&subset=cyrillic,latin.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style-mod.css" />
+    <link rel="stylesheet" href="./css/custom-head-foot-scroll-blue.css" />
+    <link rel="stylesheet" href="./css/line-icons.css" />
+    <link rel="stylesheet" href="./css/font-awesome.min.css" />
+  </head>
+  <body>
+  <div class="wrapper">
+    <!--<include src='./common/header2.htm'></include>-->
+    <div id="myheader"> </div>
+  <div class="container left hidden-lg hidden-md" id="divmobilesearch"
+  style="margin-top: 5px; margin-bottom: -18px; padding-right: 20px; padding-left: 20px;">
+    <form action="#" method="get">
+      <input id="txtSearchInputMobile" type="text" placeholder="Search for Account, Tx Hash or Data" class="form-control"
+      style="text-align: center;" name="q" maxlength="100" title="Address, Contract, Txn Hash or Data" />
+    </form>
+    <br />
+    <br />
+  </div>
+  <div class="breadcrumbs">
+    <div class="container">
+      <h1 class="pull-left"> 
+      <span class="lead-modify newTitle" style="color: #999999" ></span>
+      <br />
+      <a id="Top"></a></h1>
+      <ul class="pull-right breadcrumb">
+        <li>
+          <a href="index.htm">主页</a>
+        </li>
+        <li>
+          <a href="txs.htm">交易</a>
+        </li>
+        <li class="active">交易信息</li>
+      </ul>
+    </div>
+  </div>
+  <div class="profile container">
+    <span id="ContentPlaceHolder1_lblResult"></span>
+	<!--
+    <div style='margin-top:20px; margin-bottom:8px'>
+      <span id="ContentPlaceHolder1_lblResult">Sponsored Link: 
+      <img src="./images/bubbletone.png"  /> 
+      <b>BubbleTone</b> - Blockchain in Telecom, directly connecting mobile operators and users globally, 
+      <a href="#" rel='nofollow' title='Links to an External Advertiser site' target='_blank'>
+        <b>launches its unique ICO!</b>
+      </a></span>
+    </div>
+	-->
+    <br />
+    <div class="tab-v1">
+      <ul class="nav nav-tabs" id='nav_tabs' style="border-bottom:solid 0px #bce8f1">
+        <li class="active">
+          <a href="#overview" data-toggle="tab" >概述</a>
+        </li>
+        <li id="ContentPlaceHolder1_li_disqus">
+          <a href="#comments" data-toggle="tab">评论</a>
+        </li>
+      </ul>
+      <div class="tab-content" style="padding: 1px 0;">
+        <div class="tab-pane fade in active" id="overview">
+          <div class="panel panel-info colorde backstyle">
+            <div class="panel-heading" style="background-color: #06162c;color:#fff">
+              <h3 class="panel-title">交易信息</h3>
+              <span class="pull-right">
+                <img src="./images/EllipsisSpinner3.gif"  id="spinnerwait"
+                style="display:none; margin-bottom:2px; margin-top:0px; margin-right:20px" />
+              </span>
+            
+            </div>
+            <div id="ContentPlaceHolder1_maintable" class="container row" style="margin-top:30px">
+              <div class="col-sm-3">交易哈希:</div>
+              <div class="col-sm-9 cbs wordwrap" id='txHash'></div>
+              <div class='col-sm-3'>TxReceipt Status:</div>
+              <div class='col-sm-9 cbs'>
+                <span title='A Status code indicating if the top-level call succeeded or failed (applicable for Post BYZANTIUM blocks only)' id='txReceiptStatus'>
+
+                  <font color='green'>Success</font>
+                </span>
+              </div>
+              <div class="col-sm-3">
+                <span title='A Status code indicating if the top-level call succeeded or failed (applicable for Post BYZANTIUM blocks only)'>
+                区块高度:</span>
+              </div>
+              <div class="col-sm-9 cbs">
+                <span title='A Status code indicating if the top-level call succeeded or failed (applicable for Post BYZANTIUM blocks only)' id='blockHeight'>
+                <a href="#" >5400486</a> (
+                <span title='No of Blocks Mined Since'>32 block confirmations</span>)</span>
+              </div>
+              <div class="col-sm-3">时间:</div>
+              <div class="col-sm-9 cbs">
+              <span id="clock"></span><b id='timeStamp'></b></div>
+              <div class="col-sm-3">发送:</div>
+              <div class="col-sm-9 cbs ">
+              <a href="#" id='from'></a> (Nanopool)
+			  </div>
+              <div class="col-sm-3">接收:</div>
+              <div class="col-sm-9 cbs" id='tocon'>
+                <a href="#" class='wordwrap' id='to'></a>
+              </div>
+              <div class="col-sm-3">数目:</div>
+              <div class="col-sm-9 cbs">
+                <span title="The amount of ETH to be transferred to the recipient with the transaction" id='value'></span>
+              </div>
+			  <!--
+              <div class="col-sm-3">Gas Limit:</div>
+              <div class="col-sm-9 cbs">
+                <span title="The amount of GAS supplied for this transaction to happen" id='gasLimit'>50000</span>
+              </div>
+			  -->
+              <div class="col-sm-3">瓦斯限制:</div>
+              <div class="col-sm-9 cbs">
+                <span title="The amount of gas used by this specific transaction alone" id='gasUsedByTxn'></span>
+              </div>
+			  <!--
+              <div class="col-sm-3">Gas Price:</div>
+              <div class="col-sm-9 cbs">
+                <span title="The price offered to the miner to purchase this amount of GAS, per GAS." id='gasPrice'>0
+                <b>.</b>000000001 能量币 (1 Gwei)</span>
+              </div>
+			  -->
+              <div class="col-sm-3">Actual Tx Cost/Fee:</div>
+              <div class="col-sm-9 cbs">
+                <span title="Gas Price * Gas Used By Transaction" id='fee'></span>
+              </div>
+              <div class="col-sm-3">随机数:</div>
+              <div class="col-sm-9 cbs">
+                <span title="The transaction nonce" id='nonce'></span>
+              </div>
+              <div class="col-sm-3">数据输入:</div>
+              <div class="col-sm-9 cbs">
+                <span title="The binary data that formed the input to the transaction, either the input data if it was a message call or the contract initialisation if it was a contract creation">
+
+                  <textarea readonly="readonly" spellcheck="false"
+                  style='border:solid 2px #183257;width: 98%; font-size: small; font-family: Monospace; padding: 8px; background-color: #06162c;' rows='2'
+                  id='inputdata' >0x</textarea>
+                  <br />
+                  <span id='rawinput' style='display:none'></span>
+                </span>
+              </div>
+         
+            </div>
+            <br />
+          </div>
+        </div>
+        <div class="tab-pane fade in" id="internal">
+          <div class="panel panel-info">
+            <div class="panel-body table-responsive">No Contract Internal Transactions
+            found0xb45b10a1121aceeac39077f9d687528963116a94845c0dcd54c70c9aa5ef2da0
+            <br />
+            <br />
+            <table class="table table-striped">
+              <tr style="border-color: #E1E1E1; border-width: 1px; background-color: #F9F9F9; border-top-style: solid;">
+                <th>Type_TraceAddress</th>
+                <th>From</th>
+                <th></th>
+                <th>To</th>
+                <th>Value</th>
+                <th>GasLimit</th>
+              </tr>
+            </table></div>
+          </div>
+        </div>
+        <div class="tab-pane fade in" id="eventlog">
+          <div class="panel panel-info">
+            <div class="panel-body table-responsive">
+              <b>Transaction Receipt Event Logs</b>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade in" id="comments">
+          <div class="panel panel-info">
+            <div class="panel-body colorde backstyle">
+              <div>Make sure to use the "downvote" button for any spammy posts, and the "upvote" for interesting conversations.
+              <br />
+              <div id="disqus_thread"></div>
+    
+              <noscript>Please enable JavaScript to view the 
+              <a href="#" rel="nofollow">comments powered by Disqus.</a></noscript></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+  </div>
+  <script src="./js/jquery.countdown.min.js"></script> 
+  <script type="text/javascript" src="./js/web3.min.js"></script> 
+  <script type="text/javascript">
+        $(function () {
+            $("[rel='tooltip']").tooltip({ html: true });
+        });        
+        var startTxPendingCheck = false;
+        var txHash = "";  
+        var LitOldPrice = "( )";              
+    
+</script> 
+ <script type="text/javascript" src='./js/pages/txsDetail.js'></script>
+  <div id="push"></div></div>
+  <include src='./common/footer.htm'></include>

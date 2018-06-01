@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <title>TurboChain合约内部交易</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="etherscan.io" />
+    <meta name="keywords" content=" explorer, pwc, search, TurboChain, crypto, currency" />
+    <meta name="format-detection" content="telephone=no" />
+    <style type="text/css">
+     div.tooltip-inner {
+        max-width: 430px;
+        background-color: #505050;
+        font-size: 11px;
+    }
+   </style>
+   <script src="./js/M2jbC5w-2kzKWSY9kfVDccG4Ox8.js"></script>
+   <script type="text/javascript" src="./js/jquery-2.0.3.min.js"></script>
+   <script type="text/javascript" src="./js/jquery-ui-1.10.3.full.min.js"></script>
+   <script type="text/javascript" src='./js/include/include.js'></script>
+   <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="./js/my.js" ></script>
+
+    <link rel="stylesheet" type="text/css" href="./css/css-family=Open+Sans-400,300,600&subset=cyrillic,latin.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css"  />
+    <link rel="stylesheet" href="./css/style-mod.css"  />
+    <link rel="stylesheet" href="./css/custom-head-foot-scroll-blue.css"/>
+    <link rel="stylesheet" href="./css/line-icons.css"  />
+    <link rel="stylesheet" href="./css/font-awesome.min.css" />
+  </head>
+  <body>
+  <div class="wrapper">
+      <!--<include src='./common/header2.htm'></include>-->
+      <div id="myheader"> </div>
+    <div class="container left hidden-lg hidden-md" id="divmobilesearch"
+    style="margin-top: 5px; margin-bottom: -18px; padding-right: 20px; padding-left: 20px;">
+      <form action="#" method="get">
+        <input id="txtSearchInputMobile" type="text" placeholder="Search for Account, Tx Hash or Data" class="form-control"
+        style="text-align: center;" name="q" maxlength="100" title="Address, Contract, Txn Hash or Data" />
+      </form>
+      <br />
+      <br />
+    </div>
+    <div class="breadcrumbs">
+      <div class="container">
+        <h1 class="pull-left">合约内部交易
+        <br /></h1>
+        <ul class="pull-right breadcrumb">
+          <li>
+            <a href="index.htm" >首页</a>
+          </li>
+          <li class="active">内部交易</li>
+        </ul>
+      </div>
+    </div>
+    <div class="profile container" style="margin-top: 5px">
+
+      <div style='margin-top:20px; margin-bottom:12px'>
+        <span id="ContentPlaceHolder1_lblAdResult"></span>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-md-6 hidden-xs colorde">
+          <form method="post"  id="ctl00" >
+          <div class="aspNetHidden">
+          <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" /> 
+          <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" /> 
+          <input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" /> 
+          </div>
+          <script type="text/javascript">
+//&lt;![CDATA[
+var theForm = document.forms['ctl00'];
+if (!theForm) {
+    theForm = document.ctl00;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]&gt;
+</script>
+          <div class="aspNetHidden ">
+          <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="" />
+          <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION"/></div>
+          <span>
+            <i id="spinwheel" class="fa fa-spin fa-spinner fa-2x fa-pulse" style="display: none; margin-top: 4px"></i>
+          </span> 
+          <span>共找到 0 个内部交易
+          <br />(仅展示最后100个记录)</span> 
+          <span class="logout" title="Show Both successfully and un-sucessfully executed txns" style="font-size:9pt;">
+          <input id="ContentPlaceHolder1_RadioButton3" type="radio" name="ctl00$ContentPlaceHolder1$validityType"
+          value="RadioButton3" checked="checked" /> 
+          <label  class="colorde" for="ContentPlaceHolder1_RadioButton3">所有类型</label></span>
+          <span class="logout" title="Only Show contract internal txns successfully executed" style="font-size:9pt;">
+          <input id="ContentPlaceHolder1_RadioButton1" type="radio" name="ctl00$ContentPlaceHolder1$validityType"
+          value="RadioButton1"
+          onclick="javascript:void(0)" />
+          
+          <label class="colorde" for="ContentPlaceHolder1_RadioButton1">无错误</label></span>
+          <span class="logout" title="Only Show contract internal txns which un-successfully executed" style="font-size:9pt;">
+          <input id="ContentPlaceHolder1_RadioButton2" type="radio" name="ctl00$ContentPlaceHolder1$validityType"
+          value="RadioButton2"
+          onclick="javascript:void(0)" />
+          
+          <label class="colorde" for="ContentPlaceHolder1_RadioButton2">显示错误</label></span>
+          <br />
+          <br /></form>
+        </div>
+        <div class="col-md-6">
+          <p align="right">
+          <a class="btn btn-primary btn-xs"  href="#">First</a> 
+          <a class="btn btn-primary btn-xs"  href="#">Prev</a> 
+          <span style="padding: 2px 4px 4px 3px; border: 1px solid #D4D4D4; line-height: 30px; background-color: #EAEAEA; margin-top: 2px; height: 2px;">
+          Page 
+          <b>1</b> of 
+          <b>1</b></span> 
+          <a class="btn btn-default btn-xs logout"
+          href="#"
+          >Next</a> 
+          <a class="btn btn-default btn-xs logout"
+          href="#">Last</a></p>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <div style="margin-left: 10px; margin-right: 10px">
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr class="trstyle">
+                    <th>区块</th>
+                    <th>块龄</th>
+                    <th>父交易哈希</th>
+                    <th>类型</th>
+                    <th>发送</th>
+                    <th>接收</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+				<!--
+                  <tr>
+                    <td bgcolor='gainsboro'>
+                      <a href="#">5335833</a>
+                    </td>
+                    <td bgcolor='gainsboro'>
+                      <span rel='tooltip' data-placement='bottom' title='Mar-28-2018 07:37:32 AM'>29 secs ago</span>
+                    </td>
+                    <td bgcolor='#EAEAEA'>
+                      <a class='address-tag' href="#">0x43ff0349068136ef33785afa94703bd452188cf7da6b21816f0a4f36c0ab1a9c</a>
+                    </td>
+                    <td>call</td>
+                    <td>
+                    <span class='address-tag'>
+                      <a href="#">0x1522900b6dafac587d499a862861c0869be6e428</a>
+                    </span> 
+                    <img src="./images/green-arrow-right.png" style='margin-top:-5px; margin-bottom:-5px' /></td>
+                    <td>
+                      <span class='address-tag'>
+                        <a href="# ">0x05210f35ad845dc56f99be3241d6c793a74f0b8f</a>
+                      </span>
+                    </td>
+                    <td>0
+                    <b>.</b>72953855 Ether</td>
+                  </tr>
+                  <tr>
+                    <td bgcolor='gainsboro'>
+                      <a href="#">5335832</a>
+                    </td>
+                    <td bgcolor='gainsboro'>
+                      <span rel='tooltip' data-placement='bottom' title='Mar-28-2018 07:37:23 AM'>38 secs ago</span>
+                    </td>
+                    <td bgcolor='#EAEAEA'>
+                      <a class='address-tag' href="#">0x0d7c4c12111606478be801b94eb15d7928749e713a806c04fbabe54c1f612587</a>
+                    </td>
+                    <td>call</td>
+                    <td>
+                    <span class='address-tag'>
+                      <a href="#">0x447b80265dad5c8639879f0a5fd641f083a5f7f4</a>
+                    </span> 
+                    <img src="./images/green-arrow-right.png" tppabs="https://etherscan.io/images/green-arrow-right.png"
+                    style='margin-top:-5px; margin-bottom:-5px' /></td>
+                    <td>
+                      <span class='address-tag'>
+                        <a href="#">0x9062477d8c2dfb5f4bfa601f0216f36a0eb3b0c8</a>
+                      </span>
+                    </td>
+                    <td>0
+                    <b>.</b>001 Ether</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td bgcolor='#EAEAEA'>
+                      <a class='address-tag' href="#">0x0f194e041aeea379698fcd8f9d9051dca6157bcfeec678a2c7496694fdbc868f</a>
+                    </td>
+                    <td>create</td>
+                    <td>
+                    <span class='address-tag'>
+                      <a href="#">0x4f01001cf69785d4c37f03fd87398849411ccbba</a>
+                    </span> 
+                    <img src="./images/green-arrow-right.png" \
+                    style='margin-top:-5px; margin-bottom:-5px' /></td>
+                    <td>
+                    <img src="./images/application-table.png" title='New Contract Created' style='margin-top:-4px; margin-bottom:-3px' /> 
+                    <a class='address-tag' href="#"
+                         >0x043cb6475c267719d98f5cec01dfbe4234dc5263</a></td>
+                    <td>0 Ether</td>
+                  </tr>
+				  -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p align="right">
+          <a class="btn btn-primary btn-xs"  href="#">First</a> 
+          <a class="btn btn-primary btn-xs"  href="#">Prev</a> 
+          <span style="padding: 2px 4px 4px 3px; border: 1px solid #D4D4D4; line-height: 30px; background-color: #EAEAEA; margin-top: 2px; height: 2px;">
+          Page 
+          <b>1</b> of 
+          <b>1</b></span> 
+          <a class="btn btn-default btn-xs logout" href="#">Next</a> 
+          <a class="btn btn-default btn-xs logout" href="#">Last</a></p>
+        </div>
+      </div>
+      <br />
+      <br />
+    </div>
+    <script type="text/javascript">
+        $("#myheader").load("./common/header2.htm")
+        $(function () {
+            $("[rel='tooltip']").tooltip({ html: true });
+        });
+    
+</script>
+
+  <div id="push"></div>
+  </div>
+<include src='./common/footer.htm'></include>
